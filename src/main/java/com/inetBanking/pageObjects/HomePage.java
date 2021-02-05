@@ -3,13 +3,15 @@ package com.inetBanking.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.inetBanking.utils.ElementUtil;
+
 public class HomePage {
-	
 	
 	private WebDriver driver;
 	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
+		ElementUtil eleUtil = new ElementUtil(this.driver);
 	}
 	
 	//By locators

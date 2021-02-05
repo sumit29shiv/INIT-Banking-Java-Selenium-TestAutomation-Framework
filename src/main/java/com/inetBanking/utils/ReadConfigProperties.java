@@ -6,6 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 public class ReadConfigProperties {
 	
 	public static Properties prop;
@@ -27,5 +31,13 @@ public class ReadConfigProperties {
 		
 		return prop;
 	}
+	
+	/**
+	 * @author sumitshivhare
+	 * This method will take the screenshot and return the path of screenshot
+	 * @return It return path of screenshot
+	 */
+
+	
 
 }

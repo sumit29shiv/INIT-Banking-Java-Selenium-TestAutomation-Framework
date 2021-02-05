@@ -4,13 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
+import com.inetBanking.utils.ElementUtil;
+
 
 public class LoginPage {
 	
-	public WebDriver driver;
+	private WebDriver driver;
+	private ElementUtil eleUtil;
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		eleUtil = new ElementUtil(this.driver);
 	}
 	
 	//definig By locators
@@ -21,27 +25,27 @@ public class LoginPage {
 	
 	//Page actions
 	public String getLoginPageTitle() {
-		return driver.getTitle();
+		return eleUtil.getPageTitle();
 	}
 	
 	public HomePage doLogin(String uname, String pwd) {
-		driver.findElement(unameField).clear();
-		driver.findElement(unameField).sendKeys(uname);
-		driver.findElement(pwdField).clear();
-		driver.findElement(pwdField).sendKeys(pwd);
-		driver.findElement(lgnBtn).click();
+		eleUtil.doClear(unameField);
+		eleUtil.doSendKeys(unameField, uname);
+		eleUtil.doClear(pwdField);
+		eleUtil.doSendKeys(pwdField, pwd);
+		eleUtil.doClick(lgnBtn);
 		return new HomePage(driver);
 	}
 	
 	public boolean checkLoginPageAlertPresence() throws InterruptedException {
 		try {
-			driver.switchTo().alert();
-			Thread.sleep(4000);
+			eleUtil.switchToAlert();
+			eleUtil.hardSleep(3000);
 			return true;
 		}
 		
 		catch( NoAlertPresentException e) {
-			Thread.sleep(4000);
+			eleUtil.hardSleep(3000);;
 			return false;
 		}
 		

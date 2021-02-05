@@ -9,9 +9,7 @@
 	<test name="BankingApp Test">
 		<parameter name="browser" value="chrome" />
 			<classes>
-				<class name="com.inetBanking.testCases.AddCustomeDataPageTest" />
 				<class name="com.inetBanking.testCases.LoginPageTest" />
-				<class name="com.inetBanking.testCases.LoginPageTestDDT" />
-	   		</classes>
+			</classes>
 	</test>
 </suite>

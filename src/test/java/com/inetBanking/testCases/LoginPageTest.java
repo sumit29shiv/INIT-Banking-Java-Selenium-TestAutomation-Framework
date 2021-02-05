@@ -11,7 +11,7 @@ public class LoginPageTest extends BaseTest {
 	
 	@Test(priority = 1)
 	public void verifyLoginPageTitleTest() {
-		logger.info("Running testcase verifyLoginPageTitleTest");
+		logger.info("/n/nRunning testcase verifyLoginPageTitleTest");
 		String actualTitle = loginPage.getLoginPageTitle();
 		logger.info("Captured title: "+actualTitle);
 		Assert.assertEquals(actualTitle, Constants.LOGIN_PAGE_TITLE);
