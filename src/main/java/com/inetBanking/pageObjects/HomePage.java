@@ -4,14 +4,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.inetBanking.utils.ElementUtil;
+import com.inetBanking.utils.JavaScriptUtil;
+
 
 public class HomePage {
 	
 	private WebDriver driver;
+	private ElementUtil eleUtil;
+	private JavaScriptUtil jsUtil;
 	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
-		ElementUtil eleUtil = new ElementUtil(this.driver);
+		eleUtil = new ElementUtil(this.driver);
+		jsUtil = new JavaScriptUtil(this.driver);
 	}
 	
 	//By locators
@@ -29,12 +34,15 @@ public class HomePage {
 	
 
 
-	public void doLogout() throws InterruptedException {
-		Thread.sleep(3000);
-		driver.switchTo().frame(driver.findElement(advertisementFrame));
-		driver.findElement(advertisementBtn).click();
-		Thread.sleep(3000);
-		driver.findElement(logOutBtn);
+	public void doLogout() {
+		jsUtil.scrollPageDown();
+		//driver.switchTo().frame(driver.findElement(advertisementFrame));
+		//driver.findElement(advertisementBtn).click();
+		//HomePage..doClick(advertisementBtn);
+		eleUtil.hardSleep(3000);
+		//driver.findElement(logOutBtn);
+		eleUtil.doClick(logOutBtn);
+		eleUtil.hardSleep(3000);
 		
 	}
 	

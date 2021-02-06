@@ -10,6 +10,7 @@
 		<parameter name="browser" value="chrome" />
 			<classes>
 				<class name="com.inetBanking.testCases.LoginPageTest" />
+				<class name="com.inetBanking.testCases.LoginPageTestDDT" />
 			</classes>
 	</test>
 </suite>

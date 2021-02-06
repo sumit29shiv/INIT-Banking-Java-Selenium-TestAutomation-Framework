@@ -21,7 +21,6 @@ public class LoginPageTestDDT extends BaseTest {
 		
 		else {
 			Assert.assertTrue(true);
-			Thread.sleep(4000);
 			homePage.doLogout();
 			driver.switchTo().alert().accept();
 			driver.switchTo().defaultContent();
