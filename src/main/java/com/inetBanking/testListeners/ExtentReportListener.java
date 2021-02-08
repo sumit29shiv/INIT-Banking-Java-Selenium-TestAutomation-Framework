@@ -20,10 +20,11 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.inetBanking.base.BaseTest;
 import com.inetBanking.utils.ElementUtil;
 
 
-public class ExtentReportListener implements ITestListener {
+public class ExtentReportListener extends BaseTest implements ITestListener {
 	
 	
 
@@ -103,25 +104,25 @@ public class ExtentReportListener implements ITestListener {
 
 	public synchronized void onTestFailure(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " failed!"));
-//		try {
-//			test.get().fail(result.getThrowable(),
-//					MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
-//		} catch (IOException e) {
-//			System.err
-//					.println("Exception thrown while updating test fail status " + Arrays.toString(e.getStackTrace()));
-//		}
+		try {
+			test.get().fail(result.getThrowable(),
+					MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+		} catch (IOException e) {
+			System.err
+					.println("Exception thrown while updating test fail status " + Arrays.toString(e.getStackTrace()));
+		}
 		test.get().getModel().setEndTime(getTime(result.getEndMillis()));
 	}
 
 	public synchronized void onTestSkipped(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " skipped!"));
-//		try {
-//			test.get().skip(result.getThrowable(),
-//					MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
-//		} catch (IOException e) {
-//			System.err
-//					.println("Exception thrown while updating test skip status " + Arrays.toString(e.getStackTrace()));
-//		}
+		try {
+			test.get().skip(result.getThrowable(),
+					MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+		} catch (IOException e) {
+			System.err
+					.println("Exception thrown while updating test skip status " + Arrays.toString(e.getStackTrace()));
+		}
 		test.get().getModel().setEndTime(getTime(result.getEndMillis()));
 	}
 

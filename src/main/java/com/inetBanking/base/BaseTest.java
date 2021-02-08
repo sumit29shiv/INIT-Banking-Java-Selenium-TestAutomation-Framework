@@ -80,6 +80,26 @@ public class BaseTest {
 	}
 	
 	
+	/**
+	 * @author sumitshivhare
+	 * This method will take the screenshot and return the path of screenshot
+	 * @return It return path of screenshot
+	 */
+	public String getScreenshot() {
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		//String path = System.getProperty("user.dir") + "/screenshots" + System.currentTimeMillis() +".png";
+		String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
+		File destination = new File(path);
+		try {
+			FileUtils.copyFile(src, destination);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return path;
+			
+		}
+	
+	
 	
 
 }
