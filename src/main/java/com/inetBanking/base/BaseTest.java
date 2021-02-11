@@ -40,8 +40,8 @@ public class BaseTest {
 	public static WebDriver driver;
 	public static Logger logger;
 	public  Properties prop;
-	ChromeOptions chromeOption;
-	FirefoxOptions firefoxOption;
+	private ChromeOptions chromeOption;
+	private FirefoxOptions firefoxOption;
 	public LoginPage loginPage;
 	public HomePage homePage;
 	public AddCustomerDataPage addcustDataPage;
