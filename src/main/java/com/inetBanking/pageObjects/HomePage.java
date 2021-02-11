@@ -24,6 +24,8 @@ public class HomePage {
 	By advertisementFrame = By.xpath("//iframe[@id='aswift_0']");
 	By advertisementBtn = By.xpath("//div[@id='cbb']");
 	By addCustomerBtn = By.xpath("//a[text()='New Customer']");
+	By editCustomerBtn = By.linkText("Edit Customer");
+	By header = By.xpath("//h2[@class='barone']");
 	
 	
 	
@@ -47,14 +49,27 @@ public class HomePage {
 	}
 	
 	
- public AddCustomerDataPage clickAddNewCustomerButton() {
-		driver.findElement(addCustomerBtn).click();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+	public AddCustomerDataPage clickAddNewCustomerButton() {
+			driver.findElement(addCustomerBtn).click();
+			return new AddCustomerDataPage(driver);
 		}
-		return new AddCustomerDataPage(driver);
+	
+	public EditCustomerPage navigateToEditCustomerPage() {
+		
+		eleUtil.doClick(editCustomerBtn);
+		eleUtil.hardSleep(3000);
+		return new EditCustomerPage(driver);
+		
+		
+	}
+	
+	public String getHomePageHeaderText() {
+		if(eleUtil.doIsDisplayed(header)) {
+			return eleUtil.doGetText(header);
+		}
+		else {
+			return null;
+		}
 	}
 }
 

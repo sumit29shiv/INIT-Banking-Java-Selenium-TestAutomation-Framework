@@ -23,6 +23,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import com.inetBanking.pageObjects.AddCustomerDataPage;
+import com.inetBanking.pageObjects.EditCustomerPage;
 import com.inetBanking.pageObjects.HomePage;
 import com.inetBanking.pageObjects.LoginPage;
 import com.inetBanking.utils.ReadConfigProperties;
@@ -38,9 +39,10 @@ public class BaseTest {
 	public LoginPage loginPage;
 	public HomePage homePage;
 	public AddCustomerDataPage addcustDataPage;
+	public EditCustomerPage editCustPage;
 	
 	@Parameters("browser")
-	@BeforeMethod
+	@BeforeTest
 	public void setUp(String browser) {
 		
 		logger = Logger.getLogger("inetBanking");
@@ -73,12 +75,11 @@ public class BaseTest {
 		
 	}
 	
-	@AfterMethod
+	@AfterTest
 	public void tearDown() {
 		
 		driver.quit();
 	}
-	
 	
 	/**
 	 * @author sumitshivhare

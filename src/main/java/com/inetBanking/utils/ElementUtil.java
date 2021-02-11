@@ -27,7 +27,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ElementUtil {
+import com.inetBanking.base.BaseTest;
+
+public class ElementUtil extends BaseTest {
 
 	private WebDriver driver; // declaring webdriver globally for the class
 	
@@ -83,6 +85,10 @@ public class ElementUtil {
 		catch(ElementNotInteractableException e) {
 			e.printStackTrace();
 		}
+		catch (NoSuchElementException e) {
+			e.printStackTrace();
+		}
+		
 		
 	
 	}

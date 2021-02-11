@@ -6,11 +6,26 @@
 	<listeners>
 		<listener class-name="com.inetBanking.testListeners.ExtentReportListener" />
 	</listeners>
-	<test name="BankingApp Test">
-		<parameter name="browser" value="chrome" />
+
+	<test name="BankingAppLoginPage Test">
+		<parameter name="browser" value="firefox" />
 			<classes>
 				<class name="com.inetBanking.testCases.LoginPageTest" />
-				<class name="com.inetBanking.testCases.AddCustomeDataPageTest" />
+			</classes>
+	</test>
+
+	
+	<test name="BankingAppEditCustomerPage Test">
+		<parameter name="browser" value="chrome" />
+			<classes>
+				<class name="com.inetBanking.testCases.EditCustomerPageTest" />
+			</classes>
+	</test>
+	
+	<test name="BankingAppHomePage Test">
+		<parameter name="browser" value="chrome" />
+			<classes>
+				<class name="com.inetBanking.testCases.HomePageTest" />
 			</classes>
 	</test>
 </suite>
