@@ -7,7 +7,7 @@ import com.inetBanking.utils.ElementUtil;
 
 public class AddCustomerDataPage {
 	
-	ElementUtil eleUtil;
+	public ElementUtil eleUtil;
 	
 	public WebDriver driver;
 	
@@ -33,9 +33,9 @@ public class AddCustomerDataPage {
 	By submitbtn = By.xpath("//input[@name='sub']");
 	By msgSuccess = By.xpath("//p[@class='heading3']");
 	
-	
+	//page actions
 	public String addNewCustomer(String cusName,String cusGender,String day, String month, String year
-			,String address,String city,String state,String pin,String mobNo,String email,String pwd ) throws InterruptedException {
+			,String address,String city,String state,String pin,String mobNo,String email,String pwd ){
 		
 		eleUtil.doClick(addCustomerBtn);
 		driver.findElement(custNameField).sendKeys(cusName);
@@ -60,7 +60,7 @@ public class AddCustomerDataPage {
 		eleUtil.doSendKeys(emailField, email);
 		eleUtil.doSendKeys(pwdField, pwd);
 		eleUtil.doClick(submitbtn);
-		Thread.sleep(4000);
+		eleUtil.hardSleep(3000);
 		if(eleUtil.doIsDisplayed(msgSuccess)) {
 			return eleUtil.doGetText(msgSuccess);
 		}
