@@ -3,13 +3,18 @@ package com.inetBanking.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.inetBanking.utils.ElementUtil;
+
 public class AddCustomerDataPage {
+	
+	ElementUtil eleUtil;
 	
 	public WebDriver driver;
 	
 	//constructor 
 	public AddCustomerDataPage(WebDriver driver) {
 		this.driver = driver;
+		eleUtil = new ElementUtil(this.driver);
 	}
 	
 	//By locators
@@ -32,31 +37,32 @@ public class AddCustomerDataPage {
 	public String addNewCustomer(String cusName,String cusGender,String day, String month, String year
 			,String address,String city,String state,String pin,String mobNo,String email,String pwd ) throws InterruptedException {
 		
-		driver.findElement(addCustomerBtn).click();
+		eleUtil.doClick(addCustomerBtn);
 		driver.findElement(custNameField).sendKeys(cusName);
+		eleUtil.doSendKeys(custNameField, cusName);
 		if(cusGender.equalsIgnoreCase("male")) {
-			driver.findElement(genderMRadiobtn);
+			eleUtil.doClick(genderMRadiobtn);
 		}
 		else if(cusGender.equalsIgnoreCase("female")) {
-			driver.findElement(genderFRadioBtn);
+			eleUtil.doClick(genderFRadioBtn);
 		}
 		else {
 			System.out.println("Gender not provided");
 		}
-		driver.findElement(dobField).sendKeys(day);
-		driver.findElement(dobField).sendKeys(month);
-		driver.findElement(dobField).sendKeys(year);
-		driver.findElement(addrField).sendKeys(address);
-		driver.findElement(cityField).sendKeys(city);
-		driver.findElement(stateField).sendKeys(state);
-		driver.findElement(pinField).sendKeys(pin);
-		driver.findElement(mobField).sendKeys(mobNo);
-		driver.findElement(emailField).sendKeys(email);
-		driver.findElement(pwdField).sendKeys(pwd);
-		driver.findElement(submitbtn).click();
+		eleUtil.doSendKeys(dobField, day);
+		eleUtil.doSendKeys(dobField, month);
+		eleUtil.doSendKeys(dobField, year);
+		eleUtil.doSendKeys(addrField, address);
+		eleUtil.doSendKeys(cityField, city);
+		eleUtil.doSendKeys(stateField, state);
+		eleUtil.doSendKeys(pinField, pin);
+		eleUtil.doSendKeys(mobField, mobNo);
+		eleUtil.doSendKeys(emailField, email);
+		eleUtil.doSendKeys(pwdField, pwd);
+		eleUtil.doClick(submitbtn);
 		Thread.sleep(4000);
-		if(driver.findElement(msgSuccess).isDisplayed()) {
-			return driver.findElement(msgSuccess).getText();
+		if(eleUtil.doIsDisplayed(msgSuccess)) {
+			return eleUtil.doGetText(msgSuccess);
 		}
 		else {
 			return null;
