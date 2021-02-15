@@ -182,6 +182,25 @@ public class ElementUtil extends BaseTest {
 	public boolean doIsDisplayed(By locator) {
 		return getElement(locator).isDisplayed();
 	}
+	
+	public boolean doIsEnabled(By locator) {
+		
+		try {
+			return getElement(locator).isEnabled();
+		}
+		catch (NoSuchElementException e) {
+			System.out.println("Element not found.. "+locator);
+			e.printStackTrace();
+			return (Boolean) null;
+		}
+		catch(ElementNotVisibleException e){
+			System.out.println("Element is not found.. "+locator);
+			return (Boolean) null;
+			
+		}
+
+		
+	}
 
 	public int getElementsCountUsingTagName(String tagName) {
 		return driver.findElements(By.tagName(tagName)).size();

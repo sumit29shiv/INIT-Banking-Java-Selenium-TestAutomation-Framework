@@ -21,11 +21,20 @@ public class LoginPage {
 	private By unameField = By.xpath("//input[@name='uid']");
 	private By pwdField = By.xpath("//input[@name='password']");
 	private By lgnBtn = By.xpath("//input[@name='btnLogin']");
+	private By resetBtn = By.xpath("//input[@type='reset']");
 	
 	
 	//Page actions
 	public String getLoginPageTitle() {
 		return eleUtil.getPageTitle();
+	}
+	
+	public boolean isLoginBtnVisible() {
+		return eleUtil.doIsDisplayed(lgnBtn);
+	}
+	
+	public boolean isResetBtnEnabled() {
+		return eleUtil.doIsEnabled(resetBtn);
 	}
 	
 	public HomePage doLogin(String uname, String pwd) {

@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="InetBanking">
+<suite name="InetBanking" parallel="tests" thread-count="2">
 
 	<listeners>
 		<listener class-name="com.inetBanking.testListeners.ExtentReportListener" />
 	</listeners>
 
 	<test name="BankingAppLoginPage Test">
-		<parameter name="browser" value="firefox" />
+		<parameter name="browser" value="chrome" />
 			<classes>
 				<class name="com.inetBanking.testCases.LoginPageTest" />
 			</classes>
 	</test>
 
-	
+	<!-- 
 	<test name="BankingAppEditCustomerPage Test">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="firefox" />
 			<classes>
 				<class name="com.inetBanking.testCases.EditCustomerPageTest" />
 			</classes>
 	</test>
 	
+	 -->
+	
+
+	
 	<test name="BankingAppHomePage Test">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="firefox" />
 			<classes>
 				<class name="com.inetBanking.testCases.HomePageTest" />
 			</classes>
 	</test>
+
 </suite>
