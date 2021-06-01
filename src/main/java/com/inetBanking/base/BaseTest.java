@@ -32,7 +32,6 @@ public class BaseTest {
 	
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 	
-	
 	public static WebDriver driver;
 	public static Logger logger;
 	public  Properties prop;

@@ -12,8 +12,8 @@ public class EditCustomerPage {
 	ElementUtil eleUtil;
 	
 	//By locator
-	By cusIdField = By.xpath("//input[@name='cusid']");
-	By submitBtn = By.name("AccSubmit");
+	private By cusIdField = By.xpath("//input[@name='cusid']");
+	private By submitBtn = By.name("AccSubmit");
 	
 	//Constructor
 	public EditCustomerPage(WebDriver driver) {
@@ -23,17 +23,19 @@ public class EditCustomerPage {
 	}
 	
 	//page actions
-	
 	public boolean checkEditCustomerPageAlert() {
+		
+		boolean flag = false;
 		try {
 			eleUtil.switchToAlert();
 			eleUtil.hardSleep(3000);
-			return true;
+			flag =  true;
 		}
 		catch (NoAlertPresentException e) {
 			eleUtil.hardSleep(3000);
-			return false;
+			
 		} 
+		return flag;
 		
 	}
 	

@@ -32,11 +32,7 @@ public class ReadConfigProperties {
 		return prop;
 	}
 	
-	/**
-	 * @author sumitshivhare
-	 * This method will take the screenshot and return the path of screenshot
-	 * @return It return path of screenshot
-	 */
+
 
 	
 

@@ -18,20 +18,20 @@ public class AddCustomerDataPage {
 	}
 	
 	//By locators
-	By addCustomerBtn = By.xpath("//a[text()='New Customer']");
-	By custNameField = By.xpath("//input[@name='name']");
-	By genderMRadiobtn = By.xpath("//input[@value='m']");
-	By genderFRadioBtn = By.xpath("//input[@value='f']");
-	By dobField = By.id("dob");
-	By addrField = By.xpath("//textarea[@name='addr']");
-	By cityField = By.xpath("//input[@name='city']");
-	By stateField =  By.xpath("//input[@name='state']");
-	By pinField = By.xpath("//input[@name='pinno']");
-	By mobField = By.xpath("//input[@name='telephoneno']");
-	By emailField = By.xpath("//input[@name='emailid']");
-	By pwdField = By.xpath("//input[@name='password']");
-	By submitbtn = By.xpath("//input[@name='sub']");
-	By msgSuccess = By.xpath("//p[@class='heading3']");
+	private By addCustomerBtn = By.xpath("//a[text()='New Customer']");
+	private By custNameField = By.xpath("//input[@name='name']");
+	private By genderMRadiobtn = By.xpath("//input[@value='m']");
+	private By genderFRadioBtn = By.xpath("//input[@value='f']");
+	private By dobField = By.id("dob");
+	private By addrField = By.xpath("//textarea[@name='addr']");
+	private By cityField = By.xpath("//input[@name='city']");
+	private By stateField =  By.xpath("//input[@name='state']");
+	private By pinField = By.xpath("//input[@name='pinno']");
+	private By mobField = By.xpath("//input[@name='telephoneno']");
+	private By emailField = By.xpath("//input[@name='emailid']");
+	private By pwdField = By.xpath("//input[@name='password']");
+	private By submitbtn = By.xpath("//input[@name='sub']");
+	private By msgSuccess = By.xpath("//p[@class='heading3']");
 	
 	//page actions
 	public String addNewCustomer(String cusName,String cusGender,String day, String month, String year

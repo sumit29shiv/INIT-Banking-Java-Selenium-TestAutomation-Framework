@@ -20,12 +20,12 @@ public class HomePage {
 	}
 	
 	//By locators
-	By logOutBtn = By.linkText("Log out");
-	By advertisementFrame = By.xpath("//iframe[@id='aswift_0']");
-	By advertisementBtn = By.xpath("//div[@id='cbb']");
-	By addCustomerBtn = By.xpath("//a[text()='New Customer']");
-	By editCustomerBtn = By.linkText("Edit Customer");
-	By header = By.xpath("//h2[@class='barone']");
+	private By logOutBtn = By.linkText("Log out");
+	private By advertisementFrame = By.xpath("//iframe[@id='aswift_0']");
+	private By advertisementBtn = By.xpath("//div[@id='cbb']");
+	private By addCustomerBtn = By.xpath("//a[text()='New Customer']");
+	private By editCustomerBtn = By.linkText("Edit Customer");
+	private By header = By.xpath("//h2[@class='barone']");
 	
 	
 	
